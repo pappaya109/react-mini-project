@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'intelone-mono-font-family-regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*  id에는 웬만하면 바뀌지 않는 디자인을 넣는 것이 조음 */
+* {
+    font-family: "Pretendard-Reqular";
+    color: white;
+}
+
+#root {
+    background-color: rgba(44, 48, 53);
+    width: 100%;
+    height: 100%;
+}       
+
+.link-item {
+    text-decoration: none;
+    color: white;
+    margin: 0em 0.8em;
+}
+
+.link-item:hover {
+    color: #E50914;
+}
+
+/* banner */
+
+.banner-img {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    position: relative;
+}
+
+
+/* ::before : 선택된 요소의 첫번쨰 자식 요소를 생성.
+            -  가상요소  */
+.banner-img::before {
+    content: "";
+    background: linear-gradient(to right, black, transparent);
+    /* background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.5) 100%); */
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    left: 0;
+}
+
+.banner-item {
+    width: 40%;
+    margin: auto;
+    position: absolute;
+    top: 13em;
+    left: 5em;
+    z-index: 1;
+}
+
+.banner-item>h2 {
+    margin-bottom: 0.5em;
+}
+
+
+
+/* movieSlides */
+.slidesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.slides {
+    width: 90%;
+}
+
+.slidesWrapper>h4 {
+    width: 92%;
+    text-align: left;
+    margin: 0.5em 0em;
+}
+
+
+/* movieCards */
+
+.movieCard-img {
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 200px;
+
+}
+
+.movieCard-img a {
+    text-decoration: none;
+}
+
+.movieCard-img:hover {
+    animation-name: hoveritem;
+    animation-duration: 0.5s;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    padding: 0 0 20px 20px;
+}
+
+.overlay:hover {
+    opacity: 100;
+}
+
+.overlay span {
+    margin-right: 0.4em;
+}
+
+@keyframes hoveritem {
+    0% {
+        transform: translateY(0em);
+    }
+
+    50% {
+        transform: translateY(-0.4em);
+    }
+    100% {
+        transform: translateY(0em);
+    }
+}
+
+
+/* Details Page */
+
+.movie-detail {
+    padding: 6%;
+    /* height: 100vh; */
+    min-height: min-content;
+}
+
+/* detail -> movie box */
+.movie-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* detail -> poster */
+.detail-poster {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* detail -> poster 외 아이템 */
+.detail-item {
+    width: 80%;
+}
+
+.detail-item :first-child {
+    margin: 0.5em 0em;
+}
